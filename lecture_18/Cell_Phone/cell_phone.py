@@ -34,6 +34,14 @@ class CellPhone:
         return self._manufacturer
     
     @property
+    def price(self):
+        return self._price
+    
+    @property
+    def owner(self):
+        return self._owner
+    
+    @property
     def battery(self):
         return self._battery
     

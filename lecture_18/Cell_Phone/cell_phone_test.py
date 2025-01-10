@@ -32,6 +32,16 @@ class CellPhoneTest(unittest.TestCase):
         self.assertEqual(phone.battery.type, BatteryType.Li_ION)
         self.assertEqual(phone.battery.type.value, "Li-Ion")
         self.assertEqual(phone.battery.type.name, "Li_ION")
+    
+    def test_cell_phones_list(self):
+        phone_baterry = PhoneBattery("551model", 160, 20,BatteryType.Li_ION)
+        phone = CellPhone("3310", "Nokia", 110, "me", phone_baterry, None)
+        cell_phones_list = [phone for _ in range(5)]
+        for cell_phone in cell_phones_list:
+            self.assertEqual(phone.model, "3310")
+            self.assertEqual(phone.manufacturer, "Nokia")
+            self.assertEqual(phone.price, 110)
+            self.assertEqual(phone.owner, "me")
 
 
 if __name__ == '__main__':
