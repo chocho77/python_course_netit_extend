@@ -30,6 +30,8 @@ class CellPhoneTest(unittest.TestCase):
         phone_baterry = PhoneBattery("551model", 160, 20,BatteryType.Li_ION)
         phone = CellPhone("Nokia", "3310", 110, "me", phone_baterry, None)
         self.assertEqual(phone.battery.type, BatteryType.Li_ION)
+        self.assertEqual(phone.battery.type.value, "Li-Ion")
+        self.assertEqual(phone.battery.type.name, "Li_ION")
 
 
 if __name__ == '__main__':
