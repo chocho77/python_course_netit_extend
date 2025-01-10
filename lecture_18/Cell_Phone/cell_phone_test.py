@@ -18,11 +18,13 @@ class CellPhoneTest(unittest.TestCase):
          self.assertEqual(phone.screen.width, 640)
          self.assertEqual(phone.screen.height, 480)
          self.assertEqual(phone.screen.colors, 16_000_000)
+
     def  test_nokia_n95(self):
         phone = CellPhone.nokia_n95()
         self.assertEqual(phone.model, "N95")
-
-
+        self.assertEqual(phone.manufacturer, "Nokia")
+        self.assertEqual(str(phone), "Nokia N95")
+        
 
 if __name__ == '__main__':
     unittest.main()

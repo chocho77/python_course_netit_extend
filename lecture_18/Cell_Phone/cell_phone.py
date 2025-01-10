@@ -20,10 +20,17 @@ class CellPhone:
         self._owner = owner
         self._battery = battery
         self._screen = screen
+    
+    def __str__(self) -> str:
+        return f"{self._manufacturer} {self._model}"
 
     @property
     def model(self):
         return self._model
+    
+    @property
+    def manufacturer(self):
+        return self._manufacturer
     
     @property
     def battery(self):
