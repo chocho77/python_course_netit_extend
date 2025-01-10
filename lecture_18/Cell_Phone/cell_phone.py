@@ -3,12 +3,12 @@ from phone_screen import PhoneScreen
 
 class CellPhone:
     def __init__(self,
-                 model,
-                 manufacturer,
-                 price,
-                 owner,
-                 battery: PhoneBattery,
-                 screen: PhoneScreen):
+                 model="",
+                 manufacturer="Nokia",
+                 price=0,
+                 owner="",
+                 battery: PhoneBattery = None,
+                 screen: PhoneScreen = None):
         self._model = model
         self._manufacturer = manufacturer
         self._price = price
