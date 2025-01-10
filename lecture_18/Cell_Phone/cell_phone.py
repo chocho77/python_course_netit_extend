@@ -1,6 +1,7 @@
 from phone_battery import PhoneBattery
 from phone_screen import PhoneScreen
 
+
 class CellPhone:
 
     @staticmethod
@@ -20,7 +21,7 @@ class CellPhone:
         self._owner = owner
         self._battery = battery
         self._screen = screen
-    
+
     def __str__(self) -> str:
         return f"{self._manufacturer} {self._model}"
 
@@ -39,6 +40,10 @@ class CellPhone:
     @property
     def screen(self):
         return self._screen
+    
+    @property
+    def type(self):
+        return self._type
     
     
         

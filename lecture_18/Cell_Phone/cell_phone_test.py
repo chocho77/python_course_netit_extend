@@ -2,6 +2,7 @@ import unittest
 from cell_phone import CellPhone
 from phone_battery import PhoneBattery
 from phone_screen import PhoneScreen
+from phone_battery_type import BatteryType
 
 
 class CellPhoneTest(unittest.TestCase):
@@ -24,7 +25,12 @@ class CellPhoneTest(unittest.TestCase):
         self.assertEqual(phone.model, "N95")
         self.assertEqual(phone.manufacturer, "Nokia")
         self.assertEqual(str(phone), "Nokia N95")
-        
+    
+    def test_cell_phone_battery_type(self):
+        phone_baterry = PhoneBattery("551model", 160, 20,BatteryType.Li_ION)
+        phone = CellPhone("Nokia", "3310", 110, "me", phone_baterry, None)
+        self.assertEqual(phone.battery.type, BatteryType.Li_ION)
+
 
 if __name__ == '__main__':
     unittest.main()
