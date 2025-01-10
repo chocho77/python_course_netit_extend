@@ -42,6 +42,18 @@ class CellPhoneTest(unittest.TestCase):
             self.assertEqual(phone.manufacturer, "Nokia")
             self.assertEqual(phone.price, 110)
             self.assertEqual(phone.owner, "me")
+    
+    def test_call_history(self):
+        phone_baterry = PhoneBattery("551model", 160, 20,BatteryType.Li_ION)
+        phone = CellPhone("3310", "Nokia", 110, "me", phone_baterry, None)
+        self.assertEqual(len(phone.call_history), 0)
+        phone.call("124123")
+        self.assertEqual(len(phone.call_history), 1)
+        recent_call = phone.call_history[-1]
+        self.assertEqual(recent_call.caller, "me")
+        self.assertEqual(recent_call.to, "124123")
+        self.assertEqual(recent_call.duration, 20)
+        
 
 
 if __name__ == '__main__':

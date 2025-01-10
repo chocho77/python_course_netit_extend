@@ -1,6 +1,7 @@
+from typing import List
 from phone_battery import PhoneBattery
 from phone_screen import PhoneScreen
-
+from  cell_phone_call import Call
 
 class CellPhone:
 
@@ -21,10 +22,15 @@ class CellPhone:
         self._owner = owner
         self._battery = battery
         self._screen = screen
+        self._call_history = []
 
     def __str__(self) -> str:
         return f"{self._manufacturer} {self._model}"
-
+    
+    def call(self, to):
+        print(f"Calling {to}")
+        self._call_history.append(Call("me",to,"Today","An hour ago", 20))
+ 
     @property
     def model(self):
         return self._model
@@ -52,6 +58,10 @@ class CellPhone:
     @property
     def type(self):
         return self._type
+    
+    @property
+    def call_history(self) -> List[Call]:
+        return self._call_history
     
     
         
